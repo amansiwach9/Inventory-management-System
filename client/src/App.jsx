@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
-import { AuthProvider } from './contexts/authContext.jsx';
+import { AuthProvider } from './contexts/AuthContext.jsx';
 import AppRoutes from './routes/AppRoutes.jsx';
 
 const App = () => {

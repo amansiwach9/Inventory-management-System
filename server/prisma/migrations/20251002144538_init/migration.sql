@@ -7,6 +7,9 @@ CREATE TABLE `User` (
     `role` ENUM('ADMIN', 'USER') NOT NULL DEFAULT 'USER',
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updatedAt` DATETIME(3) NOT NULL,
+    `isVerified` BOOLEAN NOT NULL DEFAULT false,
+    `otp` VARCHAR(191) NULL,
+    `otpExpires` DATETIME(3) NULL,
 
     UNIQUE INDEX `User_email_key`(`email`),
     PRIMARY KEY (`id`)
