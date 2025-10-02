@@ -11,7 +11,9 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://inventory-management-system-86hubm83y-amans-projects-f54488ff.vercel.app/' 
+}));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
