@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link as RouterLink, useNavigate, } from 'react-router-dom';
 import {
-    Container, Box, Typography, TextField, Button, Grid, Alert, CircularProgress
+    Container, Box, Typography, TextField, Button, Grid, Alert, CircularProgress, Link as MuiLink
 } from '@mui/material';
 import {useAuth} from '../hooks/useAuth.jsx';
 
@@ -42,7 +42,10 @@ const LoginPage = () => {
                         {loading ? <CircularProgress size={24} /> : 'Sign In'}
                     </Button>
                     <Grid container>
-                        <Grid item><Link to="/register">{"Don't have an account? Sign Up"}</Link></Grid>
+                        <Grid item><MuiLink component={RouterLink} to="/register" variant="body2">
+                            Don't have an account? Sign Up
+                            </MuiLink>
+                        </Grid>
                     </Grid>
                 </Box>
             </Box>
