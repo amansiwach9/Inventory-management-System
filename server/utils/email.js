@@ -13,8 +13,9 @@ const transporter = nodemailer.createTransport({
 });
 
 export const sendOtpEmail = async (to, otp) => {
+    const fromAddress = `"Inventory Management" <${process.env.SENDER_EMAIL}>`;
     const mailOptions = {
-        from: `"Inventory Management" <${process.env.EMAIL_USER}>`,
+        from: fromAddress,
         to: to,
         subject: 'Your Verification Code',
         text: `Your OTP for Inventory Management registration is: ${otp}. It will expire in 10 minutes.`,
